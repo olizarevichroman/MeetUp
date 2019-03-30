@@ -30,19 +30,27 @@ namespace Identity.Controllers
         var user = new User(registerModel);
 
         var result = await _userManager.CreateAsync(user, registerModel.Password);
-
+        
         if (result.Succeeded)
         {
-          return Ok("Ok");
+          return Ok();
         }
         else
         {
-          return BadRequest("Bad request");
-        }
-        
+          return BadRequest(result.Errors);
+        }      
       }
 
       return BadRequest();
     }
+
+    [HttpPost]
+    public async Task<IActionResult> IsUserWithEmailExist([FromBody] string email) 
+    {
+      var user = await _userManager.FindByEmailAsync(email);
+
+      return Ok(user != null);
+    }
+
   }
 }

@@ -32,10 +32,19 @@ namespace Identity
       services.AddDbContext<ApplicationContext>(options =>
       {
         options.UseSqlServer(Configuration.GetConnectionString("IdentityDBConnection"));
-      });
+     });
 
-      services.AddIdentity<User, IdentityRole>()
-        .AddEntityFrameworkStores<ApplicationContext>();
+
+      services.AddIdentity<User, IdentityRole>(options =>
+      {
+        options.User.RequireUniqueEmail = true;
+
+        options.Lockout.MaxFailedAccessAttempts = 3;
+        options.SignIn.RequireConfirmedEmail = true;
+      })
+        .AddRoles<IdentityRole>()
+        .AddEntityFrameworkStores<ApplicationContext>()
+        .AddDefaultTokenProviders();
 
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
     }
@@ -51,7 +60,6 @@ namespace Identity
       {
         app.UseHsts();
       }
-
       app.UseHttpsRedirection();
       app.UseAuthentication();
       app.UseMvc();
