@@ -3,4 +3,12 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+
+    <color name="colorRegisterBackground">#2d2f31</color>
+    <color name="colorRegisterAccent">#CC46A9BC</color>
+    <color name="colorRegisterAccentLight">#46A9BC</color>
+    <color name="colorRegisterAccentRipple">#3346A9BC</color>
+
 </resources>

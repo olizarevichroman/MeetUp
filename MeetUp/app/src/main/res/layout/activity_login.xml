@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorRegisterBackground"
+            android:focusableInTouchMode="true">
+
+            <TextView
+                android:id="@+id/tv_logo"
+                style="@style/Base.TextAppearance.AppCompat.Display2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/app_name"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintBottom_toTopOf="@id/ti_layout_username"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/ti_layout_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_login_et_margin_horizontal"
+                android:layout_marginEnd="@dimen/activity_login_et_margin_horizontal"
+                android:backgroundTint="@color/colorWhite"
+                android:textColorHint="@color/colorRegisterAccentLight"
+                app:layout_constraintBottom_toTopOf="@id/ti_layout_password"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.35"
+                app:layout_constraintVertical_chainStyle="packed">
+
+                <EditText
+                    android:id="@+id/et_login_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorRegisterAccentLight"
+                    android:drawableStart="@drawable/ic_mail_outline"
+                    android:drawablePadding="@dimen/activity_login_et_drawable_padding"
+                    android:drawableTint="@color/color_drawable_tint"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="@dimen/activity_login_et_padding_horizontal"
+                    android:paddingEnd="@dimen/activity_login_et_padding_horizontal"
+                    android:paddingBottom="@dimen/activity_login_et_padding_bottom"
+                    android:textColor="@color/color_drawable_tint"
+                    tools:targetApi="m" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/ti_layout_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_login_et_margin_horizontal"
+                android:layout_marginEnd="@dimen/activity_login_et_margin_horizontal"
+                android:backgroundTint="@color/colorWhite"
+                android:textColorHint="@color/colorRegisterAccentLight"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ti_layout_username">
+
+                <EditText
+                    android:id="@+id/et_login_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorRegisterAccentLight"
+                    android:drawableStart="@drawable/ic_lock_outline"
+                    android:drawablePadding="@dimen/activity_login_et_drawable_padding"
+                    android:drawableTint="@color/color_drawable_tint"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:paddingStart="@dimen/activity_login_et_padding_horizontal"
+                    android:paddingEnd="@dimen/activity_login_et_padding_horizontal"
+                    android:paddingBottom="@dimen/activity_login_et_padding_bottom"
+                    android:textColor="@color/color_drawable_tint"
+                    tools:targetApi="m" />
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_sign_in"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_login_button_height"
+                android:layout_marginStart="@dimen/activity_login_et_margin_horizontal"
+                android:layout_marginEnd="@dimen/activity_login_et_margin_horizontal"
+                android:background="@color/colorRegisterAccentLight"
+                android:fontFamily="sans-serif-light"
+                android:foreground="@drawable/button_white_ripple"
+                android:text="@string/sign_in"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/tv_or"
+                app:layout_constraintEnd_toEndOf="@string/password"
+                app:layout_constraintStart_toStartOf="@string/password"
+                app:layout_constraintTop_toBottomOf="@id/ti_layout_password"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/tv_or"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_login_button_margin_top"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/or"
+                android:textColor="@color/colorRegisterAccent"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/btn_login_facebook"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_sign_in" />
+
+            <ImageButton
+                android:id="@+id/btn_login_vk"
+                android:layout_width="@dimen/activity_login_btn_social_size"
+                android:layout_height="@dimen/activity_login_btn_social_size"
+                android:background="@drawable/button_social_background"
+                android:contentDescription="@string/social"
+                android:foreground="@drawable/button_social_foreground"
+                android:src="@drawable/vk_logo"
+                app:layout_constraintBottom_toBottomOf="@id/btn_login_facebook"
+                app:layout_constraintEnd_toStartOf="@id/btn_login_facebook"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btn_login_facebook"
+                tools:targetApi="m" />
+
+            <ImageButton
+                android:id="@+id/btn_login_facebook"
+                android:layout_width="@dimen/activity_login_btn_social_size"
+                android:layout_height="@dimen/activity_login_btn_social_size"
+                android:layout_marginTop="@dimen/activity_login_social_button_margin_top"
+                android:layout_marginBottom="@dimen/activity_login_social_button_margin_top"
+                android:background="@drawable/button_social_background"
+                android:contentDescription="@string/social"
+                android:foreground="@drawable/button_social_foreground"
+                android:src="@drawable/facebook_logo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_login_twitter"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/btn_login_vk"
+                app:layout_constraintTop_toBottomOf="@id/tv_or"
+                tools:targetApi="m" />
+
+            <ImageButton
+                android:id="@+id/btn_login_twitter"
+                android:layout_width="@dimen/activity_login_btn_social_size"
+                android:layout_height="@dimen/activity_login_btn_social_size"
+                android:background="@drawable/button_social_background"
+                android:contentDescription="@string/social"
+                android:foreground="@drawable/button_social_foreground"
+                android:src="@drawable/twitter_logo"
+                app:layout_constraintBottom_toBottomOf="@id/btn_login_facebook"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/btn_login_facebook"
+                app:layout_constraintTop_toTopOf="@id/btn_login_facebook"
+                tools:targetApi="m" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+</layout>

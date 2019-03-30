@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="activity_login_et_drawable_padding">15dp</dimen>
+    <dimen name="activity_login_et_margin_horizontal">35dp</dimen>
+    <dimen name="activity_login_et_padding_horizontal">10dp</dimen>
+    <dimen name="activity_login_et_padding_bottom">15dp</dimen>
+    <dimen name="activity_login_button_height">60dp</dimen>
+    <dimen name="activity_login_button_margin_top">50dp</dimen>
+    <dimen name="activity_login_social_button_margin_top">35dp</dimen>
+    <dimen name="activity_login_btn_social_size">55dp</dimen>
+
+    <dimen name="activity_start_tv_info_horizontal_margin">35dp</dimen>
+    <dimen name="activity_start_tv_info_vertical_margin">15dp</dimen>
+    <dimen name="activity_start_divider_height">0.5dp</dimen>
+    <dimen name="activity_start_divider_horizontal_margin">60dp</dimen>
+    <dimen name="activity_start_divider_vertical_margin">10dp</dimen>
+    <dimen name="activity_start_button_vertical_margin">10dp</dimen>
+</resources>
