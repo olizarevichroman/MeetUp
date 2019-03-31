@@ -14,11 +14,20 @@ namespace Identity
   {
     public static void Main(string[] args)
     {
-      CreateWebHostBuilder(args).Build().Run();
+      var webHostBuilder = new WebHostBuilder();
+      webHostBuilder.UseKestrel(options =>
+      {
+        options.ListenAnyIP(41537);
+      });
+
+      webHostBuilder
+        .UseStartup<Startup>()
+        .Build()
+        .Run();
     }
 
-    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-        WebHost.CreateDefaultBuilder(args)
-            .UseStartup<Startup>();
+    //public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+    //    WebHost.CreateDefaultBuilder(args)
+    //        .UseStartup<Startup>();
   }
 }
