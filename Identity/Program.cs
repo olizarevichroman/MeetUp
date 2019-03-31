@@ -14,20 +14,24 @@ namespace Identity
   {
     public static void Main(string[] args)
     {
-      var webHostBuilder = new WebHostBuilder();
-      webHostBuilder.UseKestrel(options =>
+      var builder = new WebHostBuilder();
+      builder.UseKestrel(opt =>
       {
-        options.ListenAnyIP(41537);
-      });
-
-      webHostBuilder
-        .UseStartup<Startup>()
-        .Build()
-        .Run();
+        opt.ListenAnyIP(5000);
+      })
+      .UseContentRoot(Directory.GetCurrentDirectory())
+      .UseStartup<Startup>()
+      .ConfigureAppConfiguration(o =>
+      {
+        o.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
+      })
+      .Build()
+      .Run();
+      //CreateWebHostBuilder(args).Build().Run();
     }
 
-    //public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-    //    WebHost.CreateDefaultBuilder(args)
-    //        .UseStartup<Startup>();
+    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+        WebHost.CreateDefaultBuilder(args)
+            .UseStartup<Startup>();
   }
 }
