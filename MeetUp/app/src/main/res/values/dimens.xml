@@ -16,4 +16,12 @@
     <dimen name="activity_start_divider_horizontal_margin">60dp</dimen>
     <dimen name="activity_start_divider_vertical_margin">10dp</dimen>
     <dimen name="activity_start_button_vertical_margin">10dp</dimen>
+
+    <dimen name="activity_register_circle_view_border_width">2dp</dimen>
+    <dimen name="activity_register_circle_view_size">120dp</dimen>
+    <dimen name="activity_register_et_margin_start">20dp</dimen>
+    <dimen name="activity_register_et_email_margin_top">30dp</dimen>
+    <dimen name="activity_register_tv_or_vertical_margin">20dp</dimen>
+    <dimen name="edit_text_drawable_size">28dp</dimen>
+
 </resources>

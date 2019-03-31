@@ -65,6 +65,9 @@ dependencies {
     implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
 
+    // CircleImageView
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+
     // ExpandableLayout
     implementation 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
 
